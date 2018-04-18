@@ -29,6 +29,9 @@ html {
   font-size: 24px;
   line-height: 30px;
   font-weight: 300;
+  background-image: url("sun.svg");
+  background-size: 30px;
+  background-repeat: no-repeat;
 }
 
 .page-header__search {
@@ -134,4 +137,21 @@ html {
   height: 0;
   width: 100%;
   background-color: #ff9d2c;
+}
+
+.loader {
+  text-align: center;
+}
+
+.loader img {
+  animation: Loader-spin infinite 5s linear;
+}
+
+@keyframes Loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
