@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
+import Header from "./components/Header";
+import Forecast from "./components/Forecast";
+
 class App extends Component {
   render() {
-    return <div className="App">Hello, World!</div>;
+    return (
+      <div>
+        <Header />
+        <Forecast />
+      </div>
+    );
   }
 }
 
