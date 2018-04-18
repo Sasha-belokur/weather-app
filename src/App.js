@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { getFormatedForecast } from "./utils";
 
 import Header from "./components/Header";
 import Forecast from "./components/Forecast";
@@ -28,11 +29,12 @@ class App extends Component {
         }
       })
       .then(res => {
+        const forecast = res.data;
         this.setState({
-          city: res.data.city.name,
-          forecast: res.data,
+          currentCity: `${forecast.city.name}, ${forecast.city.country}`,
+          dailyForecast: forecast.list[0],
+          forecast: getFormatedForecast(forecast.list),
           isLoaderShown: false
-          // weather: getForecast(res.data)
         });
       })
       .catch(error => console.dir(error));
@@ -46,7 +48,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Forecast isLoaderShown={this.state.isLoaderShown} />
+        <Forecast
+          isLoaderShown={this.state.isLoaderShown}
+          dailyForecast={this.state.dailyForecast}
+          currentCity={this.state.currentCity}
+        />
       </div>
     );
   }

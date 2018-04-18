@@ -1,26 +1,33 @@
 import React from "react";
+import { getCurrentDay } from "../utils";
 
 function DailyForecast(props) {
+  const city = props.city;
+  const { humidity, temp, pressure } = props.forecast.main;
+  const { description } = props.forecast.weather[0];
+  const wind = props.forecast.wind.speed.toFixed(1);
+  const clouds = props.forecast.clouds.all;
   return (
     <article className="daily-forecast">
-      <time className="daily-forecast__date">April, 18</time>
-      <div className="daily-forecast__city-name">Dnipro, UA</div>
+      <time className="daily-forecast__date">{getCurrentDay()}</time>
+      <div className="daily-forecast__city-name">{city}</div>
       <div className="daily-forecast__temperature">
-        15<sup>°</sup> C
+        {Math.round(temp)}
+        <sup>°</sup>C
       </div>
-      <div className="daily-forecast__text">few clouds</div>
+      <div className="daily-forecast__text">{description}</div>
       <div className="daily-forecast__extra-info">
         <span className="daily-forecast__info-item">
-          <b>Pressure</b>: 1021
+          <b>Pressure</b>: {pressure}
         </span>
         <span className="daily-forecast__info-item">
-          <b>Humidity</b>: 59
+          <b>Humidity</b>: {humidity}
         </span>
         <span className="daily-forecast__info-item">
-          <b>Wind Speed</b>: 9 m/s
+          <b>Wind Speed</b>: {wind} m/s
         </span>
         <span className="daily-forecast__info-item">
-          <b>Clouds</b>: 20 %
+          <b>Clouds</b>: {clouds} %
         </span>
       </div>
     </article>
