@@ -47,7 +47,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header onSearch={this.getForecastData} />
         <Forecast
           isLoaderShown={this.state.isLoaderShown}
           dailyForecast={this.state.dailyForecast}

@@ -5,7 +5,6 @@ import LongTermForecast from "./LongTermForecast";
 import Loader from "./Loader";
 
 function Forecast(props) {
-  console.log(props);
   return props.isLoaderShown ? (
     <Loader />
   ) : (
