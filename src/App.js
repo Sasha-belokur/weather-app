@@ -4,15 +4,23 @@ import { getFormatedForecast } from "./utils";
 
 import Header from "./components/Header";
 import Forecast from "./components/Forecast";
+import ErrorMessage from "./components/ErrorMessage";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      isLoaderShown: true
+      isLoaderShown: true,
+      errorMessage: ""
     };
 
     this.getForecastData = this.getForecastData.bind(this);
+    this.showErrorMessage = this.showErrorMessage.bind(this);
+  }
+
+  showErrorMessage(msg) {
+    this.setState({ errorMessage: msg });
+    setTimeout(() => this.setState({ errorMessage: "" }), 5000);
   }
 
   getForecastData(city) {
@@ -34,10 +42,20 @@ class App extends Component {
           currentCity: `${forecast.city.name}, ${forecast.city.country}`,
           dailyForecast: forecast.list[0],
           forecast: getFormatedForecast(forecast.list),
-          isLoaderShown: false
+          isLoaderShown: false,
+          errorMessage: ""
         });
       })
-      .catch(error => console.dir(error));
+      .catch(err => {
+        let msg = "";
+        if (err.response) {
+          msg = `Sorry, something went wrong: ${err.response.data.message}`;
+        } else {
+          msg = "We are having some problems, try to reload page.";
+        }
+
+        this.showErrorMessage(msg);
+      });
   }
 
   componentDidMount() {
@@ -47,6 +65,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <ErrorMessage message={this.state.errorMessage} />
         <Header onSearch={this.getForecastData} />
         <Forecast
           isLoaderShown={this.state.isLoaderShown}

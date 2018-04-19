@@ -164,6 +164,7 @@ html {
 .long-term-forecast__chart-column--type-humidity {
   background-color: #39cccc;
   background-image: url("icons/humidity.svg");
+  padding-left: 10px;
 }
 
 .loader {
@@ -181,4 +182,17 @@ html {
   to {
     transform: rotate(360deg);
   }
+}
+
+.error-msg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 34px;
+  padding: 5px 10px;
+  color: #fffdfd;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #f65656;
 }
