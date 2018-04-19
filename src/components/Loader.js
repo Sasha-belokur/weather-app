@@ -1,5 +1,5 @@
 import React from "react";
-import sun from "../sun.svg";
+import sun from "../icons/sun.svg";
 
 function Loader() {
   return (

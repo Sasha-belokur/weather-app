@@ -30,7 +30,7 @@ html {
   font-size: 24px;
   line-height: 30px;
   font-weight: 300;
-  background-image: url("sun.svg");
+  background-image: url("icons/sun.svg");
   background-size: 30px;
   background-repeat: no-repeat;
 }
@@ -140,22 +140,30 @@ html {
   padding-top: 5px;
   color: #ffffff;
   transition: all 0.3s ease;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 5px 3px;
 }
 
 .long-term-forecast__chart-column--type-wind {
   background-color: #0074d9;
+  background-image: url("icons/breeze.svg");
 }
 
 .long-term-forecast__chart-column--type-temp {
   background-color: #ff851b;
+  background-image: url("icons/celsius.svg");
 }
 
 .long-term-forecast__chart-column--type-presure {
   background-color: #3d9970;
+  background-image: url("icons/gauge.svg");
+  padding-left: 20px;
 }
 
 .long-term-forecast__chart-column--type-humidity {
   background-color: #39cccc;
+  background-image: url("icons/humidity.svg");
 }
 
 .loader {
