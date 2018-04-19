@@ -117,7 +117,7 @@ html {
 
 .long-term-forecast__chart {
   display: flex;
-  height: 200px;
+  height: 230px;
   background-color: #fdf8e5;
   padding: 10px;
 }
