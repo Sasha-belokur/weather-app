@@ -10,7 +10,7 @@ function Forecast(props) {
   ) : (
     <div>
       <DailyForecast city={props.currentCity} forecast={props.dailyForecast} />
-      <LongTermForecast />
+      <LongTermForecast forecast={props.forecast} />
     </div>
   );
 }

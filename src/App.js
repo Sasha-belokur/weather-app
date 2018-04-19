@@ -52,6 +52,7 @@ class App extends Component {
           isLoaderShown={this.state.isLoaderShown}
           dailyForecast={this.state.dailyForecast}
           currentCity={this.state.currentCity}
+          forecast={this.state.forecast}
         />
       </div>
     );

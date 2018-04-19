@@ -2,6 +2,7 @@ html,
 body {
   width: 1200px;
   margin: 0 auto;
+  color: #444444;
 }
 
 html {
@@ -134,9 +135,27 @@ html {
 }
 
 .long-term-forecast__chart-column {
-  height: 0;
+  min-height: 25px;
   width: 100%;
-  background-color: #ff9d2c;
+  padding-top: 5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.long-term-forecast__chart-column--type-wind {
+  background-color: #0074d9;
+}
+
+.long-term-forecast__chart-column--type-temp {
+  background-color: #ff851b;
+}
+
+.long-term-forecast__chart-column--type-presure {
+  background-color: #3d9970;
+}
+
+.long-term-forecast__chart-column--type-humidity {
+  background-color: #39cccc;
 }
 
 .loader {
