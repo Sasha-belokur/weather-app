@@ -26,7 +26,7 @@ class App extends Component {
   getForecastData(city) {
     if (!city) return;
 
-    const link = "http://api.openweathermap.org/data/2.5/forecast";
+    const link = "https://api.openweathermap.org/data/2.5/forecast";
     const appid = "889a099ef04f7508e2286e417f9837d0";
     axios
       .get(link, {
