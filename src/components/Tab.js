@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { capitalize } from "../utils";
 
 const Tab = props => {
@@ -10,6 +11,11 @@ const Tab = props => {
       {capitalize(props.label)}
     </li>
   );
+};
+
+Tab.propTypes = {
+  label: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired
 };
 
 export default Tab;

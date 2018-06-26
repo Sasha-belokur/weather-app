@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 import Chart from "./Chart";
 import Tabs from "./Tabs";
@@ -11,6 +12,10 @@ class LongTermForecast extends Component {
     };
     this.changeChart = this.changeChart.bind(this);
   }
+
+  static propTypes = {
+    forecast: PropTypes.array.isRequired
+  };
 
   changeChart(type) {
     this.setState({ activeTab: type });

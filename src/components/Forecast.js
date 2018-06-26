@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import DailyForecast from "./DailyForecast";
 import LongTermForecast from "./LongTermForecast";
@@ -14,5 +15,11 @@ function Forecast(props) {
     </div>
   );
 }
+
+Forecast.propTypes = {
+  currentCity: PropTypes.string,
+  forecast: PropTypes.array,
+  dailyForecast: PropTypes.object
+};
 
 export default Forecast;

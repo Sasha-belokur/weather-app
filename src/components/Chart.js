@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 function Chart(props) {
   const MAX_HEIGHT = 160;
   const arrayValues = props.forecast.map(item => item[props.chartType]);
@@ -25,5 +27,10 @@ function Chart(props) {
     </section>
   );
 }
+
+Chart.propTypes = {
+  forecast: PropTypes.array.isRequired,
+  chartType: PropTypes.string.isRequired
+};
 
 export default Chart;

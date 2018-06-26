@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { getCurrentDay } from "../utils";
 
 function DailyForecast(props) {
@@ -33,5 +35,10 @@ function DailyForecast(props) {
     </article>
   );
 }
+
+DailyForecast.propTypes = {
+  city: PropTypes.string.isRequired,
+  forecast: PropTypes.object.isRequired
+};
 
 export default DailyForecast;

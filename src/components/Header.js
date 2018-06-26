@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { debounce } from "../utils";
 
 class Header extends Component {
@@ -6,6 +7,10 @@ class Header extends Component {
     super();
     this.changeHandler = debounce(this.changeHandler.bind(this), 500);
   }
+
+  static propTypes = {
+    onSearch: PropTypes.func.isRequired
+  };
 
   changeHandler = () => {
     const city = this.searchInput.value;

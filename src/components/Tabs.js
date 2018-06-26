@@ -1,8 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import shortid from "shortid";
 import Tab from "./Tab";
 
 class Tabs extends Component {
+  static propTypes = {
+    onTabClick: PropTypes.func.isRequired,
+    labels: PropTypes.array.isRequired,
+    activeTab: PropTypes.string.isRequired
+  };
+
   handleTabAction = chartType => {
     this.props.onTabClick(chartType);
   };
