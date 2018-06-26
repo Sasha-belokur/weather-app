@@ -7,22 +7,29 @@ class LongTermForecast extends Component {
   constructor() {
     super();
     this.state = {
-      currentChart: "temp"
+      activeTab: "temp"
     };
     this.changeChart = this.changeChart.bind(this);
   }
 
   changeChart(type) {
-    this.setState({ currentChart: type });
+    this.setState({ activeTab: type });
   }
 
   render() {
+    const tabLabels = Object.keys(this.props.forecast[0]).filter(
+      label => label !== "date"
+    );
     return (
       <section className="long-term-forecast">
         <h2 className="long-term-forecast__title">Forecast 5 days</h2>
-        <Tabs onTabClick={this.changeChart} />
+        <Tabs
+          onTabClick={this.changeChart}
+          labels={tabLabels}
+          activeTab={this.state.activeTab}
+        />
         <Chart
-          chartType={this.state.currentChart}
+          chartType={this.state.activeTab}
           forecast={this.props.forecast}
         />
       </section>

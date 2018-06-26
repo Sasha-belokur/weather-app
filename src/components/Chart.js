@@ -7,7 +7,7 @@ function Chart(props) {
   return (
     <section className="long-term-forecast__chart">
       {props.forecast.map((item, i) => {
-        const height = item[props.chartType] * MAX_HEIGHT / maxValue + "px";
+        const height = (item[props.chartType] * MAX_HEIGHT) / maxValue + "px";
 
         return (
           <div key={i} className="long-term-forecast__chart-item">
