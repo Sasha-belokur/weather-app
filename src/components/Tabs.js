@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import shortid from "shortid";
 import Tab from "./Tab";
 
 class Tabs extends Component {
@@ -31,7 +32,9 @@ class Tabs extends Component {
       >
         {this.props.labels.map(label => {
           const isActive = label === this.props.activeTab;
-          return <Tab key={label} label={label} isActive={isActive} />;
+          return (
+            <Tab key={shortid.generate()} label={label} isActive={isActive} />
+          );
         })}
       </ul>
     );
